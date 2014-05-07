@@ -40,8 +40,8 @@ class Database_MySQLi extends Database {
 			'hostname'   => '',
 			'username'   => '',
 			'password'   => '',
-			'port'       => '',
-			'socket'     => ''
+			'port'       => ini_get("mysqli.default_port"),
+			'socket'     => ini_get("mysqli.default_socket"),
 		));
 
 		// Prevent this information from showing up in traces
