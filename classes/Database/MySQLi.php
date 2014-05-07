@@ -50,6 +50,7 @@ class Database_MySQLi extends Database {
 
 		try
 		{
+            print_r(get_defined_vars());
 			$this->_connection = mysqli_connect($hostname, $username, $password, $database, $port, $socket);
 		}
 		catch (Exception $e)
