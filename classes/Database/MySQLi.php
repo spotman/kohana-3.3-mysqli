@@ -57,6 +57,8 @@ class Database_MySQLi extends Database {
 			// No connection exists
 			$this->_connection = NULL;
 
+            throw $e;
+
 			throw new Database_Exception(':error',
 				array(':error' => $e->getMessage()),
 				$e->getCode());
