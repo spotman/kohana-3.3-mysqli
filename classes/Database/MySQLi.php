@@ -44,6 +44,7 @@ class Database_MySQLi extends Database {
 			'socket'     => ini_get("mysqli.default_socket"),
 		));
 
+
 		// Prevent this information from showing up in traces
 		unset($this->_config['connection']['username'], $this->_config['connection']['password']);
 
