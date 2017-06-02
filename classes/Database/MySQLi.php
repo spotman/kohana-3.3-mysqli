@@ -52,7 +52,7 @@ class Database_MySQLi extends Database {
 		{
 			$this->_connection = mysqli_connect($hostname, $username, $password, $database, $port, $socket);
 		}
-		catch (Exception $e)
+		catch (Throwable $e)
 		{
 			// No connection exists
 			$this->_connection = NULL;
@@ -119,7 +119,7 @@ class Database_MySQLi extends Database {
 				}
 			}
 		}
-		catch (Exception $e)
+		catch (Throwable $e)
 		{
 			// Database is probably not disconnected
 			$status = ! is_resource($this->_connection);

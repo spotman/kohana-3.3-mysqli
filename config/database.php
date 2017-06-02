@@ -28,5 +28,3 @@ return array
                 'caching'      => FALSE,
         )
 );
-
-?>
