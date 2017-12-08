@@ -62,6 +62,10 @@ class Database_MySQLi extends Database {
 				$e->getCode());
 		}
 
+		if (!$this->_connection) {
+            throw new Database_Exception('Database connection can not be estabilished');
+        }
+
 		// \xFF is a better delimiter, but the PHP driver uses underscore
 		$this->_connection_id = sha1($hostname.'_'.$username.'_'.$password);
 
