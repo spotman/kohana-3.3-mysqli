@@ -246,6 +246,7 @@ class Database_MySQLi extends Database {
 			'tinyint unsigned'          => array('type' => 'int', 'min' => '0', 'max' => '255'),
 			'tinytext'                  => array('type' => 'string', 'character_maximum_length' => '255'),
 			'year'                      => array('type' => 'string'),
+            'json'                      => array('type' => 'string', 'binary' => TRUE, 'character_maximum_length' => '4294967295'),
 		);
 
 		$type = str_replace(' zerofill', '', $type);
