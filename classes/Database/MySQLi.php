@@ -426,4 +426,12 @@ class Database_MySQLi extends Database {
 		return "'$value'";
 	}
 
+    public function ping(): bool
+    {
+        // Make sure the database is connected
+        $this->_connection or $this->connect();
+
+        return mysqli_ping($this->_connection);
+	}
+
 } // End Database_MySQLi
