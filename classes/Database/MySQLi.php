@@ -428,10 +428,15 @@ class Database_MySQLi extends Database {
 
     public function ping(): bool
     {
-        // Make sure the database is connected
-        $this->_connection or $this->connect();
+        try {
+            // Make sure the database is connected
+            $this->connect();
 
-        return mysqli_ping($this->_connection);
+            // mysql_ping() is deprecated
+            return (bool)$this->query(Database::SELECT, 'SELECT TRUE as `result`')->get('result');
+        } catch (Throwable) {
+            return false;
+        }
 	}
 
 } // End Database_MySQLi
